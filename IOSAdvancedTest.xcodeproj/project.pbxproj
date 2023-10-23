@@ -103,11 +103,11 @@
 			children = (
 				8DE73EF52AE6708C009F49CE /* AppDelegate.swift */,
 				8DE73EF72AE6708C009F49CE /* SceneDelegate.swift */,
-				8DE73EF92AE6708C009F49CE /* ViewController.swift */,
-				8DE73EFB2AE6708C009F49CE /* Main.storyboard */,
-				8DE73F012AE6708E009F49CE /* Assets.xcassets */,
-				8DE73F032AE6708E009F49CE /* LaunchScreen.storyboard */,
 				8DE73F062AE6708E009F49CE /* Info.plist */,
+				8DE73F2B2AE67212009F49CE /* Domain */,
+				8DE73F2A2AE67209009F49CE /* Resources */,
+				8DE73F292AE671F8009F49CE /* Data */,
+				8DE73F282AE671D0009F49CE /* Presentation */,
 				8DE73EFE2AE6708C009F49CE /* IOSAdvancedTest.xcdatamodeld */,
 			);
 			path = IOSAdvancedTest;
@@ -128,6 +128,70 @@
 				8DE73F1B2AE6708F009F49CE /* IOSAdvancedTestUITestsLaunchTests.swift */,
 			);
 			path = IOSAdvancedTestUITests;
+			sourceTree = "<group>";
+		};
+		8DE73F282AE671D0009F49CE /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				8DE73F2D2AE67260009F49CE /* Launch */,
+				8DE73F2C2AE6722F009F49CE /* Splash */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		8DE73F292AE671F8009F49CE /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				8DE73F2F2AE67280009F49CE /* Api */,
+				8DE73F2E2AE67278009F49CE /* Local */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		8DE73F2A2AE67209009F49CE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DE73F012AE6708E009F49CE /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8DE73F2B2AE67212009F49CE /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		8DE73F2C2AE6722F009F49CE /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				8DE73EFB2AE6708C009F49CE /* Main.storyboard */,
+				8DE73EF92AE6708C009F49CE /* ViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		8DE73F2D2AE67260009F49CE /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				8DE73F032AE6708E009F49CE /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		8DE73F2E2AE67278009F49CE /* Local */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		8DE73F2F2AE67280009F49CE /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
