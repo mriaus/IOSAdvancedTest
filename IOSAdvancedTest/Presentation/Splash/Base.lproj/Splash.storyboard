@@ -36,10 +36,23 @@
                             <constraint firstItem="wiV-mu-wLF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CEl-wm-2gU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="XZS-tX-E5i" kind="show" identifier="SPLASH_TO_LOGIN" id="vaF-ZU-U9O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="124" y="-34"/>
+        </scene>
+        <!--LoginViewController-->
+        <scene sceneID="sCO-uh-qEm">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="LoginViewController" id="XZS-tX-E5i" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0TX-S0-ivk"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hZ2-dD-BaR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="851" y="-36"/>
         </scene>
     </scenes>
     <resources>
