@@ -18,6 +18,7 @@
 		8DE73F1A2AE6708F009F49CE /* IOSAdvancedTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73F192AE6708F009F49CE /* IOSAdvancedTestUITests.swift */; };
 		8DE73F1C2AE6708F009F49CE /* IOSAdvancedTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73F1B2AE6708F009F49CE /* IOSAdvancedTestUITestsLaunchTests.swift */; };
 		8DE73F312AE67331009F49CE /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73F302AE67331009F49CE /* SplashViewModel.swift */; };
+		8DE73F442AE6813A009F49CE /* Saiyan-Sans.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8DE73F432AE6813A009F49CE /* Saiyan-Sans.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		8DE73F192AE6708F009F49CE /* IOSAdvancedTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSAdvancedTestUITests.swift; sourceTree = "<group>"; };
 		8DE73F1B2AE6708F009F49CE /* IOSAdvancedTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOSAdvancedTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8DE73F302AE67331009F49CE /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		8DE73F432AE6813A009F49CE /* Saiyan-Sans.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Saiyan-Sans.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		8DE73F2A2AE67209009F49CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8DE73F422AE68107009F49CE /* Fonts */,
 				8DE73F012AE6708E009F49CE /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -195,6 +198,14 @@
 			children = (
 			);
 			path = Api;
+			sourceTree = "<group>";
+		};
+		8DE73F422AE68107009F49CE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8DE73F432AE6813A009F49CE /* Saiyan-Sans.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +314,7 @@
 			files = (
 				8DE73F052AE6708E009F49CE /* LaunchScreen.storyboard in Resources */,
 				8DE73F022AE6708E009F49CE /* Assets.xcassets in Resources */,
+				8DE73F442AE6813A009F49CE /* Saiyan-Sans.ttf in Resources */,
 				8DE73EFD2AE6708C009F49CE /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
