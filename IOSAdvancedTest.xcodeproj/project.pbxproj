@@ -22,6 +22,13 @@
 		8DE73F472AE681DB009F49CE /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE73F462AE681DB009F49CE /* Login.storyboard */; };
 		8DE73F492AE681E7009F49CE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73F482AE681E7009F49CE /* LoginViewController.swift */; };
 		8DE73F4B2AE681F2009F49CE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73F4A2AE681F2009F49CE /* LoginViewModel.swift */; };
+		8DE73F4D2AE6D9C4009F49CE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73F4C2AE6D9C4009F49CE /* Constants.swift */; };
+		8DE73F4F2AE6DDFD009F49CE /* ApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73F4E2AE6DDFD009F49CE /* ApiProvider.swift */; };
+		8DE73F522AE6E17B009F49CE /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8DE73F512AE6E17B009F49CE /* KeychainSwift */; };
+		8DE73F552AE6E1A0009F49CE /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8DE73F542AE6E1A0009F49CE /* Kingfisher */; };
+		8DE73F572AE6E1E1009F49CE /* SecureDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73F562AE6E1E1009F49CE /* SecureDataProvider.swift */; };
+		8DE73F5A2AE6E2E4009F49CE /* Characters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE73F592AE6E2E4009F49CE /* Characters.storyboard */; };
+		8DE73F5C2AE6E337009F49CE /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73F5B2AE6E337009F49CE /* CharactersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +68,11 @@
 		8DE73F462AE681DB009F49CE /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		8DE73F482AE681E7009F49CE /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		8DE73F4A2AE681F2009F49CE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		8DE73F4C2AE6D9C4009F49CE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8DE73F4E2AE6DDFD009F49CE /* ApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProvider.swift; sourceTree = "<group>"; };
+		8DE73F562AE6E1E1009F49CE /* SecureDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataProvider.swift; sourceTree = "<group>"; };
+		8DE73F592AE6E2E4009F49CE /* Characters.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Characters.storyboard; sourceTree = "<group>"; };
+		8DE73F5B2AE6E337009F49CE /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +80,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DE73F552AE6E1A0009F49CE /* Kingfisher in Frameworks */,
+				8DE73F522AE6E17B009F49CE /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,6 +132,7 @@
 				8DE73F2A2AE67209009F49CE /* Resources */,
 				8DE73F292AE671F8009F49CE /* Data */,
 				8DE73F282AE671D0009F49CE /* Presentation */,
+				8DE73F4C2AE6D9C4009F49CE /* Constants.swift */,
 			);
 			path = IOSAdvancedTest;
 			sourceTree = "<group>";
@@ -142,6 +157,7 @@
 		8DE73F282AE671D0009F49CE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8DE73F582AE6E287009F49CE /* Characters */,
 				8DE73F452AE681C0009F49CE /* Login */,
 				8DE73F2D2AE67260009F49CE /* Launch */,
 				8DE73F2C2AE6722F009F49CE /* Splash */,
@@ -196,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				8DE73EFE2AE6708C009F49CE /* IOSAdvancedTest.xcdatamodeld */,
+				8DE73F562AE6E1E1009F49CE /* SecureDataProvider.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -203,6 +220,7 @@
 		8DE73F2F2AE67280009F49CE /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				8DE73F4E2AE6DDFD009F49CE /* ApiProvider.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -225,6 +243,15 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		8DE73F582AE6E287009F49CE /* Characters */ = {
+			isa = PBXGroup;
+			children = (
+				8DE73F592AE6E2E4009F49CE /* Characters.storyboard */,
+				8DE73F5B2AE6E337009F49CE /* CharactersViewController.swift */,
+			);
+			path = Characters;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,6 +268,10 @@
 			dependencies = (
 			);
 			name = IOSAdvancedTest;
+			packageProductDependencies = (
+				8DE73F512AE6E17B009F49CE /* KeychainSwift */,
+				8DE73F542AE6E1A0009F49CE /* Kingfisher */,
+			);
 			productName = IOSAdvancedTest;
 			productReference = 8DE73EF22AE6708C009F49CE /* IOSAdvancedTest.app */;
 			productType = "com.apple.product-type.application";
@@ -313,6 +344,10 @@
 				Base,
 			);
 			mainGroup = 8DE73EE92AE6708C009F49CE;
+			packageReferences = (
+				8DE73F502AE6E17B009F49CE /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				8DE73F532AE6E1A0009F49CE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 8DE73EF32AE6708C009F49CE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -333,6 +368,7 @@
 				8DE73F022AE6708E009F49CE /* Assets.xcassets in Resources */,
 				8DE73F442AE6813A009F49CE /* Saiyan-Sans.ttf in Resources */,
 				8DE73F472AE681DB009F49CE /* Login.storyboard in Resources */,
+				8DE73F5A2AE6E2E4009F49CE /* Characters.storyboard in Resources */,
 				8DE73EFD2AE6708C009F49CE /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -364,7 +400,11 @@
 				8DE73F002AE6708C009F49CE /* IOSAdvancedTest.xcdatamodeld in Sources */,
 				8DE73EF62AE6708C009F49CE /* AppDelegate.swift in Sources */,
 				8DE73EF82AE6708C009F49CE /* SceneDelegate.swift in Sources */,
+				8DE73F4F2AE6DDFD009F49CE /* ApiProvider.swift in Sources */,
+				8DE73F572AE6E1E1009F49CE /* SecureDataProvider.swift in Sources */,
 				8DE73F4B2AE681F2009F49CE /* LoginViewModel.swift in Sources */,
+				8DE73F4D2AE6D9C4009F49CE /* Constants.swift in Sources */,
+				8DE73F5C2AE6E337009F49CE /* CharactersViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,6 +749,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8DE73F502AE6E17B009F49CE /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
+		8DE73F532AE6E1A0009F49CE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8DE73F512AE6E17B009F49CE /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DE73F502AE6E17B009F49CE /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+		8DE73F542AE6E1A0009F49CE /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DE73F532AE6E1A0009F49CE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8DE73EFE2AE6708C009F49CE /* IOSAdvancedTest.xcdatamodeld */ = {
