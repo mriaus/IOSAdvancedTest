@@ -25,27 +25,35 @@ class CharactersViewModel: CharactersViewControllerDelegate {
         self.apiProvider = apiProvider
         self.dataProvider = dataProvider
         self.logged = logged ?? false
-        //        Remove the saved characters before log out
-        let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
-            coreDataProvider.deleteAllCharacters()
     }
     
     func onViewAppear() {
-        DispatchQueue.global().async {
-            guard let token = self.dataProvider.getToken() else {return}
-            self.apiProvider.getHeroes(by: nil, token: token) { characters in
-                self.characters = characters
-                self.viewState?(.updateData)
-                DispatchQueue.main.async {
-                    let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
-                    for character in characters {
-                        coreDataProvider.saveCharacter(character: character)
+        if(logged){
+            print("Api data")
+            DispatchQueue.global().async {
+                guard let token = self.dataProvider.getToken() else {return}
+                self.apiProvider.getHeroes(by: nil, token: token) { characters in
+                    self.characters = characters
+                    self.viewState?(.updateData)
+                    DispatchQueue.main.async {
+                        let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
+//                        Remove the data before save the news characters
+                        coreDataProvider.deleteAllCharacters()
+                        for character in characters {
+                            coreDataProvider.saveCharacter(character: character)
+                        }
+                        NotificationCenter.default.removeObserver(self)
                     }
-                    NotificationCenter.default.removeObserver(self)
                 }
             }
+        }else {
+            print("Local data")
+            let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
+            self.characters = coreDataProvider.loadCharacters()
+            self.viewState?(.updateData)
         }
     }
+    
     
     func characterBy(index: Int) -> Character? {
         if index >= 0 && index < charactersCount {
@@ -56,9 +64,9 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     }
     
     func onLogOutButtonPressed() {
-//        Remove the token
-            dataProvider.save(token: "")
-//        changeViewState to do the navigation
+        //        Remove the token
+        dataProvider.save(token: "")
+        //        changeViewState to do the navigation
         self.viewState?(.navigateToLogin)
     }
     

@@ -38,6 +38,7 @@
                     </view>
                     <connections>
                         <segue destination="XZS-tX-E5i" kind="show" identifier="SPLASH_TO_LOGIN" id="vaF-ZU-U9O"/>
+                        <segue destination="zCk-LR-9Si" kind="show" identifier="SPLASH_TO_CHARACTERS" id="YCm-Ye-aKi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -53,6 +54,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hZ2-dD-BaR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="851" y="-36"/>
+        </scene>
+        <!--CharactersViewController-->
+        <scene sceneID="Bos-Eb-u3P">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Characters" referencedIdentifier="CharactersViewController" id="zCk-LR-9Si" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0V4-n8-eo4"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6kK-w4-gmA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="899" y="62"/>
         </scene>
     </scenes>
     <resources>

@@ -9,6 +9,14 @@ import UIKit
 
 protocol SplashViewControllerDelegate {
     var loginViewModel: LoginViewControllerDelegate {get}
+    var charactersViewModel: CharactersViewControllerDelegate {get}
+    func getToken()
+    var viewState: ((SplashViewState) -> Void)? {get set}
+}
+
+enum SplashViewState {
+    case navigateToLogin
+    case navigateToList
 }
 
 class SplashViewController: UIViewController {
@@ -16,13 +24,17 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        changeView()
+        setObservers()
+        initiViews()
+        
+    }
+    
+    private func initiViews() {
+        viewModel?.getToken()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
@@ -30,17 +42,34 @@ class SplashViewController: UIViewController {
         switch(segue.identifier) {
         case SegueIdentifiersValues.SPLASHtoLOGIN:
             guard let loginViewController = segue.destination as? LoginViewController else {
-                print("Error en el splash_to_login vm")
+                print("Error in splash_to_login vm")
                 return
             }
             loginViewController.viewModel = viewModel?.loginViewModel
+        case SegueIdentifiersValues.SPLASHtoCHARACTERS:
+            guard let charactersViewController = segue.destination as? CharactersViewController else {
+                print("Error in splash_to_characters vm")
+                return
+            }
+            charactersViewController.viewModel = viewModel?.charactersViewModel
         default: return
         }
     }
     
-    func changeView (){
-        self.performSegue(withIdentifier: SegueIdentifiersValues.SPLASHtoLOGIN  , sender: nil)
+    private func setObservers() {
+        viewModel?.viewState = {[weak self] state in
+            DispatchQueue.main.async {
+                switch state {
+                case .navigateToLogin:
+                    self?.performSegue(withIdentifier: SegueIdentifiersValues.SPLASHtoLOGIN, sender: nil)
+                    return
+                case .navigateToList:
+                    self?.performSegue(withIdentifier: SegueIdentifiersValues.SPLASHtoCHARACTERS, sender: nil)
+                }
+            }
+        }
     }
+    
 
 
 }
