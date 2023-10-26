@@ -17,11 +17,17 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     private var logged: Bool
     private let apiProvider: ApiProviderProtocol
     private let dataProvider: SecureDataProviderProtocol
+    var loginViewModel: LoginViewControllerDelegate {
+        LoginViewModel(apiProvider: apiProvider, secureDataProvider: dataProvider)
+    }
     
     init(apiProvider: ApiProviderProtocol, dataProvider: SecureDataProviderProtocol, logged: Bool?) {
         self.apiProvider = apiProvider
         self.dataProvider = dataProvider
         self.logged = logged ?? false
+        //        Remove the saved characters before log out
+        let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
+            coreDataProvider.deleteAllCharacters()
     }
     
     func onViewAppear() {
@@ -35,7 +41,7 @@ class CharactersViewModel: CharactersViewControllerDelegate {
                     for character in characters {
                         coreDataProvider.saveCharacter(character: character)
                     }
-                    print(coreDataProvider.loadCharacters().count)
+                    NotificationCenter.default.removeObserver(self)
                 }
             }
         }
@@ -49,5 +55,11 @@ class CharactersViewModel: CharactersViewControllerDelegate {
         }
     }
     
+    func onLogOutButtonPressed() {
+//        Remove the token
+            dataProvider.save(token: "")
+//        changeViewState to do the navigation
+        self.viewState?(.navigateToLogin)
+    }
     
 }

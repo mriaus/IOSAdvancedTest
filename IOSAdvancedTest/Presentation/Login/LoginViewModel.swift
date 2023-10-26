@@ -42,16 +42,12 @@ class LoginViewModel: LoginViewControllerDelegate {
                 return
             }
             self.doLoginWith(email: email ?? "", password: password ?? "")
-            
         }
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
-    
     @objc func onLoginSucces(_ notification: Notification) {
-        defer { //        Se ejecuta justo antes de terminar la función
+        //        Always before the function ends
+        defer {
             viewState?(.loading(false))
         }
         
@@ -61,6 +57,7 @@ class LoginViewModel: LoginViewControllerDelegate {
         }
         
         secureDataProvider.save(token: token)
+        NotificationCenter.default.removeObserver(self)
         viewState?(.navigateToNext)
     }
     

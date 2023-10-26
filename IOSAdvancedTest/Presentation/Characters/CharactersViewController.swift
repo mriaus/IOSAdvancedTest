@@ -12,11 +12,15 @@ protocol CharactersViewControllerDelegate {
     var viewState: ((CharacterViewState) -> Void)? {get set}
     var charactersCount: Int {get}
     func onViewAppear()
+    func onLogOutButtonPressed()
     func characterBy(index: Int) -> Character?
+    var loginViewModel: LoginViewControllerDelegate { get }
 }
 
 enum CharacterViewState {
     case updateData
+    case navigateToLogin
+    case navigateToDetail
 }
 
 class CharactersViewController: UIViewController {
@@ -40,17 +44,33 @@ class CharactersViewController: UIViewController {
         logOutButton.tintColor = UIColor.red
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        Añadir un switch para añadir el cambio al detalle
+        guard segue.identifier == SegueIdentifiersValues.CHARACTERStoLOGIN,
+              let loginViewController = segue.destination as? LoginViewController else {
+            return
+        }
+        loginViewController.viewModel = viewModel?.loginViewModel
+    }
+    
     private func setObservers() {
         viewModel?.viewState = { [weak self] state in
             DispatchQueue.main.async {
                 switch state {
                 case .updateData:
                     self?.tableView.reloadData()
+                case .navigateToLogin:
+                    self?.performSegue(withIdentifier: SegueIdentifiersValues.CHARACTERStoLOGIN, sender: nil)
+                case .navigateToDetail:
+                    return
                 }
             }
         }
     }
     
+    @IBAction func onPressLogOut(_ sender: Any) {
+        viewModel?.onLogOutButtonPressed()
+    }
 }
 
 

@@ -35,6 +35,9 @@
                                         <buttonConfiguration key="configuration" style="plain">
                                             <backgroundConfiguration key="background"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="onPressLogOut:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="3ON-ZE-gwO"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Characters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1d3-Ha-0Zl">
                                         <rect key="frame" x="28" y="8" width="337" height="32"/>
@@ -142,11 +145,22 @@
                     <connections>
                         <outlet property="logOutButton" destination="jxc-Ve-icf" id="k9i-fV-Vap"/>
                         <outlet property="tableView" destination="ngk-Q3-n2e" id="kH0-hs-MYJ"/>
+                        <segue destination="MeQ-ZC-QYu" kind="show" identifier="CHARACTERS_TO_LOGIN" id="blt-64-4oq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.465648854961827" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="-279" y="-61"/>
+        </scene>
+        <!--LoginViewController-->
+        <scene sceneID="Xdj-o0-YLO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Login" referencedIdentifier="LoginViewController" id="MeQ-ZC-QYu" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="8T9-3B-1rP"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V8O-Hi-flL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="645" y="-127"/>
         </scene>
     </scenes>
     <resources>

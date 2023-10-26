@@ -32,6 +32,7 @@ extension NotificationCenter {
 enum  SegueIdentifiersValues {
     static let LOGINtoCHARACTERS = "LOGIN_TO_CHARACTERS"
     static let SPLASHtoLOGIN = "SPLASH_TO_LOGIN"
+    static let CHARACTERStoLOGIN = "CHARACTERS_TO_LOGIN"
 }
 
 //MARK: -NETWORK ERRORS -
