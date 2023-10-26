@@ -30,11 +30,11 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     func onViewAppear() {
         if(logged){
             print("Api data")
-            DispatchQueue.global().async {
-                guard let token = self.dataProvider.getToken() else {return}
-                self.apiProvider.getHeroes(by: nil, token: token) { characters in
-                    self.characters = characters
-                    self.viewState?(.updateData)
+            DispatchQueue.global().async { [weak self] in
+                guard let token = self?.dataProvider.getToken() else {return}
+                self?.apiProvider.getHeroes(by: nil, token: token) { characters in
+                    self?.characters = characters
+                    self?.viewState?(.updateData)
                     DispatchQueue.main.async {
                         let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
 //                        Remove the data before save the news characters
@@ -42,10 +42,10 @@ class CharactersViewModel: CharactersViewControllerDelegate {
                         for character in characters {
                             coreDataProvider.saveCharacter(character: character)
                         }
-                        NotificationCenter.default.removeObserver(self)
                     }
                 }
             }
+            NotificationCenter.default.removeObserver(self)
         }else {
             print("Local data")
             let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
