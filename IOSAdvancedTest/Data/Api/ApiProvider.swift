@@ -8,11 +8,13 @@
 import Foundation
 protocol ApiProviderProtocol {
     func login(for user: String, with password: String)
+    func getHeroes(by name: String?, token: String, completion: ((Characters) -> Void)?)
 }
 
 class ApiProvider: ApiProviderProtocol {
     private let apiBaseUrl = APIBASEURL
     private let endpoints = ENDPOINTS.self
+    
     func login(for user: String, with password: String) {
         guard let url = URL(string: "\(apiBaseUrl)\(endpoints.LOGIN)") else {
             NotificationCenter.default.post(name: NotificationCenter.APILOGINFAILEDNOTIFICATION, object: nil,userInfo: [NotificationCenter.ERRORLOGIN: "Login error"])
@@ -29,13 +31,11 @@ class ApiProvider: ApiProviderProtocol {
         urlRequest.setValue("Basic \(loginData)", forHTTPHeaderField: "Authorization")
         URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
             guard error == nil else {
-                // TODO: Notificación de fallo
                 NotificationCenter.default.post(name: NotificationCenter.APILOGINFAILEDNOTIFICATION, object: nil, userInfo: [NotificationCenter.ERRORLOGIN: "Login error"])
                 return
             }
             
             guard let data, (response as? HTTPURLResponse)?.statusCode == 200 else {
-                // TODO: Notificación de fallo
                 NotificationCenter.default.post(name: NotificationCenter.APILOGINFAILEDNOTIFICATION, object: nil,userInfo: [NotificationCenter.STATUSCODEERROR: (response as? HTTPURLResponse)?.statusCode ?? "Unexpected error"])
                 return
             }
@@ -47,6 +47,39 @@ class ApiProvider: ApiProviderProtocol {
             NotificationCenter.default.post(name: NotificationCenter.APILOGINNOTIFICATION,
             object: nil, userInfo: [NotificationCenter.TOKENKEY: responseData])
             
+        }.resume()
+    }
+    
+    func getHeroes(by name: String?, token: String, completion: ((Characters) -> Void)?) {
+        guard let url = URL(string: "\(apiBaseUrl)\(endpoints.HEROES)") else {
+            completion?([])
+            return
+        }
+        let jsonData: [String: Any] = ["name": name ?? ""]
+        let jsonParameters = try? JSONSerialization.data(withJSONObject: jsonData)
+        var urlRequest = URLRequest(url: url)
+//        TODO: See how to refactor the headers
+        urlRequest.httpMethod = "POST"
+        urlRequest.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        urlRequest.httpBody = jsonParameters
+        
+        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+            guard error == nil else {
+                completion?([])
+                return
+            }
+            
+            guard let data, (response as? HTTPURLResponse)?.statusCode == 200 else {
+                completion?([])
+                return
+            }
+            
+            guard let characters = try? JSONDecoder().decode(Characters.self, from: data) else {
+                completion?([])
+                return
+            }
+            completion?(characters)
         }.resume()
     }
     

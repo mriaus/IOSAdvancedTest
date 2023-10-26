@@ -12,6 +12,9 @@ class LoginViewModel: LoginViewControllerDelegate {
     
     private let apiProvider: ApiProviderProtocol
     private let secureDataProvider: SecureDataProviderProtocol
+    var charactersViewModel: CharactersViewControllerDelegate {
+        CharactersViewModel(apiProvider: apiProvider, dataProvider: secureDataProvider, logged: true)
+    }
     
     //    MARK: - Init -
     init(apiProvider: ApiProviderProtocol, secureDataProvider: SecureDataProviderProtocol) {

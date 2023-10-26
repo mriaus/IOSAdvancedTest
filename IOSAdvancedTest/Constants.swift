@@ -17,6 +17,7 @@ let APIBASEURL = "https://dragonball.keepcoding.education/api"
 // MARK: - ENDPOINTS -
 enum ENDPOINTS {
     static let LOGIN = "/auth/login"
+    static let HEROES = "/heros/all"
 }
 // MARK: -Notification center names-
 extension NotificationCenter {

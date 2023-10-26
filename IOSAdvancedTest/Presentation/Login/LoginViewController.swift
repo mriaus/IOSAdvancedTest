@@ -10,6 +10,8 @@ import UIKit
 protocol LoginViewControllerDelegate {
     var viewState: ((LoginViewState) ->Void)? {get set}
     func onLoginPressed(email: String?, password: String?)
+    var charactersViewModel: CharactersViewControllerDelegate { get }
+
 }
 
 enum LoginViewState {
@@ -50,6 +52,14 @@ class LoginViewController: UIViewController {
             target: self,
             action: #selector(dismissKeyboard)
         ))
+    }
+//    MARK: Prepare for segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == SegueIdentifiersValues.LOGINtoCHARACTERS,
+              let charactersViewController = segue.destination as? CharactersViewController else {
+            return
+        }
+        charactersViewController.viewModel = viewModel?.charactersViewModel
     }
     
     @objc func dismissKeyboard() {
