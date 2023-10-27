@@ -28,7 +28,7 @@ class CharacterCellView: UITableViewCell{
     override func prepareForReuse() {
         super.prepareForReuse()
         characterName.text = nil
-        characterImage.image = nil
+        characterImage.image = UIImage(named: "pinImage")
         characterDescription.text = nil
     }
     

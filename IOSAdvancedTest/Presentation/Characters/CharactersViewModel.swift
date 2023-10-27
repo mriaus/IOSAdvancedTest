@@ -16,22 +16,28 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     }
     private var logged: Bool
     private let apiProvider: ApiProviderProtocol
-    private let dataProvider: SecureDataProviderProtocol
+    private let secureDataProvider: SecureDataProviderProtocol
     var loginViewModel: LoginViewControllerDelegate {
-        LoginViewModel(apiProvider: apiProvider, secureDataProvider: dataProvider)
+        LoginViewModel(apiProvider: apiProvider, secureDataProvider: secureDataProvider)
     }
+   
     
     init(apiProvider: ApiProviderProtocol, dataProvider: SecureDataProviderProtocol, logged: Bool?) {
         self.apiProvider = apiProvider
-        self.dataProvider = dataProvider
+        self.secureDataProvider = dataProvider
         self.logged = logged ?? false
+    }
+    
+    func characterDetailViewModel(index: Int) ->  CharacterDetailDelegate?{
+        guard let selectedCharacter = characterBy(index: index) else {return nil}
+        return CharacterDetailViewModel(character: selectedCharacter, apiProvider: apiProvider, secureDataProvider: secureDataProvider)
     }
     
     func onViewAppear() {
         if(logged){
             print("Api data")
             DispatchQueue.global().async { [weak self] in
-                guard let token = self?.dataProvider.getToken() else {return}
+                guard let token = self?.secureDataProvider.getToken() else {return}
                 self?.apiProvider.getHeroes(by: nil, token: token) { characters in
                     self?.characters = characters
                     self?.viewState?(.updateData)
@@ -65,7 +71,7 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     
     func onLogOutButtonPressed() {
         //        Remove the token
-        dataProvider.save(token: "")
+        secureDataProvider.save(token: "")
         //        changeViewState to do the navigation
         self.viewState?(.navigateToLogin)
     }
