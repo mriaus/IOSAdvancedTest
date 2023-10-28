@@ -20,7 +20,7 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     var loginViewModel: LoginViewControllerDelegate {
         LoginViewModel(apiProvider: apiProvider, secureDataProvider: secureDataProvider)
     }
-   
+    
     
     init(apiProvider: ApiProviderProtocol, dataProvider: SecureDataProviderProtocol, logged: Bool?) {
         self.apiProvider = apiProvider
@@ -34,29 +34,31 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     }
     
     func onViewAppear() {
-        if(logged){
+        NotificationCenter.default.removeObserver(self)
+        let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
+        self.characters = coreDataProvider.loadCharacters()
+        print(self.characters.count)
+        if(self.characters.count < 1){
+            //                Just call the api if no characters found
             print("Api data")
-            DispatchQueue.global().async { [weak self] in
-                guard let token = self?.secureDataProvider.getToken() else {return}
-                self?.apiProvider.getHeroes(by: nil, token: token) { characters in
-                    self?.characters = characters
-                    self?.viewState?(.updateData)
-                    DispatchQueue.main.async {
-                        let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
-//                        Remove the data before save the news characters
-                        coreDataProvider.deleteAllCharacters()
-                        for character in characters {
-                            coreDataProvider.saveCharacter(character: character)
-                        }
+            getApiData()
+        }
+        self.viewState?(.updateData)
+    }
+    
+    private func  getApiData(){
+        DispatchQueue.global().async { [weak self] in
+            guard let token = self?.secureDataProvider.getToken() else {return}
+            self?.apiProvider.getHeroes(by: nil, token: token) { characters in
+                self?.characters = characters
+                self?.viewState?(.updateData)
+                DispatchQueue.main.async {
+                    let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
+                    for character in characters {
+                        coreDataProvider.saveCharacter(character: character)
                     }
                 }
             }
-            NotificationCenter.default.removeObserver(self)
-        }else {
-            print("Local data")
-            let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
-            self.characters = coreDataProvider.loadCharacters()
-            self.viewState?(.updateData)
         }
     }
     
@@ -70,6 +72,10 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     }
     
     func onLogOutButtonPressed() {
+//        Remove the core data items
+        let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
+        coreDataProvider.deleteAllCharacters()
+        
         //        Remove the token
         secureDataProvider.save(token: "")
         //        changeViewState to do the navigation
