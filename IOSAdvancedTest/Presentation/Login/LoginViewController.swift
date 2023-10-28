@@ -10,7 +10,7 @@ import UIKit
 protocol LoginViewControllerDelegate {
     var viewState: ((LoginViewState) ->Void)? {get set}
     func onLoginPressed(email: String?, password: String?)
-    var charactersViewModel: CharactersViewControllerDelegate { get }
+    var tabBarViewModel: TabBarViewControllerDelegate { get }
 
 }
 
@@ -55,11 +55,11 @@ class LoginViewController: UIViewController {
     }
 //    MARK: Prepare for segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == SegueIdentifiersValues.LOGINtoCHARACTERS,
-              let charactersViewController = segue.destination as? CharactersViewController else {
+        guard segue.identifier == SegueIdentifiersValues.LOGINtoTABS,
+              let tabsViewController = segue.destination as? TabBarViewController else {
             return
         }
-        charactersViewController.viewModel = viewModel?.charactersViewModel
+        tabsViewController.viewModel = viewModel?.tabBarViewModel
     }
     
     @objc func dismissKeyboard() {
@@ -86,7 +86,7 @@ class LoginViewController: UIViewController {
                     self?.passwordErrorLabel.isHidden = true
                     self?.loginErrorLabel.isHidden = true
                     self?.loadingView.isHidden = true
-                    self?.performSegue(withIdentifier: SegueIdentifiersValues.LOGINtoCHARACTERS, sender: nil)
+                    self?.performSegue(withIdentifier: SegueIdentifiersValues.LOGINtoTABS, sender: nil)
                     return
                 case .showErrorLogin(let error):
                     self?.loginErrorLabel.text = error

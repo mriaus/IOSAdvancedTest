@@ -3,4 +3,85 @@
    uuid = "F14EE5E1-CCAB-40B9-9840-72A05237BEA4"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE3C5B15-BB25-4964-A9E4-F64D939DEAB3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOSAdvancedTest/Presentation/Splash/SplashViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "getToken()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9A840362-16F8-4DAF-9C41-8C91F49C8A39"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "IOSAdvancedTest/Presentation/Splash/SplashViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "setObservers()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9A840362-16F8-4DAF-9C41-8C91F49C8A39 - 4cf6550f085224f7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "IOSAdvancedTest.SplashViewController.setObservers() -&gt; ()"
+                  moduleName = "IOSAdvancedTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcos/Desktop/Cursos/IOS/IOSAdvancedTest/IOSAdvancedTest/Presentation/Splash/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "9A840362-16F8-4DAF-9C41-8C91F49C8A39 - 4a563e5c01ef2cf3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (IOSAdvancedTest.SplashViewState) -&gt; () in IOSAdvancedTest.SplashViewController.setObservers() -&gt; ()"
+                  moduleName = "IOSAdvancedTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcos/Desktop/Cursos/IOS/IOSAdvancedTest/IOSAdvancedTest/Presentation/Splash/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "9A840362-16F8-4DAF-9C41-8C91F49C8A39 - e22f8bdd10565f3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (IOSAdvancedTest.SplashViewState) -&gt; () in IOSAdvancedTest.SplashViewController.setObservers() -&gt; ()"
+                  moduleName = "IOSAdvancedTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/marcos/Desktop/Cursos/IOS/IOSAdvancedTest/IOSAdvancedTest/Presentation/Splash/SplashViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

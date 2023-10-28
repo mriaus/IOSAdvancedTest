@@ -10,6 +10,13 @@
 		8DB809F12AEBBA1B00FB55C4 /* CharacterLocationDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB809F02AEBBA1B00FB55C4 /* CharacterLocationDAO.swift */; };
 		8DB809F32AEBBA2C00FB55C4 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB809F22AEBBA2C00FB55C4 /* Location.swift */; };
 		8DB809F62AEBDE0800FB55C4 /* CharacterAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB809F52AEBDE0800FB55C4 /* CharacterAnnotation.swift */; };
+		8DB809FB2AEC2F2700FB55C4 /* Locations.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB809FA2AEC2F2700FB55C4 /* Locations.storyboard */; };
+		8DB809FD2AEC2F3600FB55C4 /* LocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB809FC2AEC2F3600FB55C4 /* LocationsViewController.swift */; };
+		8DB80A002AEC47D600FB55C4 /* TabBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DB809FF2AEC47D600FB55C4 /* TabBar.storyboard */; };
+		8DB80A022AEC497300FB55C4 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB80A012AEC497300FB55C4 /* TabBarViewController.swift */; };
+		8DB80A062AEC5E3100FB55C4 /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB80A052AEC5E3100FB55C4 /* TabBarViewModel.swift */; };
+		8DB80A082AED159700FB55C4 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB80A072AED159700FB55C4 /* LocationsViewModel.swift */; };
+		8DB80A0B2AED242D00FB55C4 /* MultipleMapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB80A0A2AED242D00FB55C4 /* MultipleMapAnnotation.swift */; };
 		8DE73EF62AE6708C009F49CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73EF52AE6708C009F49CE /* AppDelegate.swift */; };
 		8DE73EF82AE6708C009F49CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73EF72AE6708C009F49CE /* SceneDelegate.swift */; };
 		8DE73EFA2AE6708C009F49CE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73EF92AE6708C009F49CE /* SplashViewController.swift */; };
@@ -63,6 +70,13 @@
 		8DB809F02AEBBA1B00FB55C4 /* CharacterLocationDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterLocationDAO.swift; sourceTree = "<group>"; };
 		8DB809F22AEBBA2C00FB55C4 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		8DB809F52AEBDE0800FB55C4 /* CharacterAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterAnnotation.swift; sourceTree = "<group>"; };
+		8DB809FA2AEC2F2700FB55C4 /* Locations.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Locations.storyboard; sourceTree = "<group>"; };
+		8DB809FC2AEC2F3600FB55C4 /* LocationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewController.swift; sourceTree = "<group>"; };
+		8DB809FF2AEC47D600FB55C4 /* TabBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TabBar.storyboard; sourceTree = "<group>"; };
+		8DB80A012AEC497300FB55C4 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		8DB80A052AEC5E3100FB55C4 /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		8DB80A072AED159700FB55C4 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
+		8DB80A0A2AED242D00FB55C4 /* MultipleMapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleMapAnnotation.swift; sourceTree = "<group>"; };
 		8DE73EF22AE6708C009F49CE /* IOSAdvancedTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSAdvancedTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE73EF52AE6708C009F49CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DE73EF72AE6708C009F49CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +146,35 @@
 			path = MapAnnotations;
 			sourceTree = "<group>";
 		};
+		8DB809F92AEC2F1400FB55C4 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				8DB80A092AED241300FB55C4 /* MapAnnotation */,
+				8DB809FA2AEC2F2700FB55C4 /* Locations.storyboard */,
+				8DB809FC2AEC2F3600FB55C4 /* LocationsViewController.swift */,
+				8DB80A072AED159700FB55C4 /* LocationsViewModel.swift */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		8DB809FE2AEC47AF00FB55C4 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8DB809FF2AEC47D600FB55C4 /* TabBar.storyboard */,
+				8DB80A012AEC497300FB55C4 /* TabBarViewController.swift */,
+				8DB80A052AEC5E3100FB55C4 /* TabBarViewModel.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		8DB80A092AED241300FB55C4 /* MapAnnotation */ = {
+			isa = PBXGroup;
+			children = (
+				8DB80A0A2AED242D00FB55C4 /* MultipleMapAnnotation.swift */,
+			);
+			path = MapAnnotation;
+			sourceTree = "<group>";
+		};
 		8DE73EE92AE6708C009F49CE = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +230,8 @@
 		8DE73F282AE671D0009F49CE /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				8DB809FE2AEC47AF00FB55C4 /* TabBar */,
+				8DB809F92AEC2F1400FB55C4 /* Locations */,
 				8DE73F6C2AEAEE0B009F49CE /* CharacterDetail */,
 				8DE73F582AE6E287009F49CE /* Characters */,
 				8DE73F452AE681C0009F49CE /* Login */,
@@ -438,12 +483,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DE73F6E2AEAEE4E009F49CE /* CharacterDetail.storyboard in Resources */,
+				8DB80A002AEC47D600FB55C4 /* TabBar.storyboard in Resources */,
 				8DE73F052AE6708E009F49CE /* LaunchScreen.storyboard in Resources */,
 				8DE73F022AE6708E009F49CE /* Assets.xcassets in Resources */,
 				8DE73F442AE6813A009F49CE /* Saiyan-Sans.ttf in Resources */,
 				8DE73F472AE681DB009F49CE /* Login.storyboard in Resources */,
 				8DE73F5A2AE6E2E4009F49CE /* Characters.storyboard in Resources */,
 				8DE73EFD2AE6708C009F49CE /* Splash.storyboard in Resources */,
+				8DB809FB2AEC2F2700FB55C4 /* Locations.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,16 +526,21 @@
 				8DE73EF82AE6708C009F49CE /* SceneDelegate.swift in Sources */,
 				8DE73F4F2AE6DDFD009F49CE /* ApiProvider.swift in Sources */,
 				8DE73F572AE6E1E1009F49CE /* SecureDataProvider.swift in Sources */,
+				8DB80A0B2AED242D00FB55C4 /* MultipleMapAnnotation.swift in Sources */,
 				8DE73F632AEA6E95009F49CE /* CharacterCellView.swift in Sources */,
 				8DB809F62AEBDE0800FB55C4 /* CharacterAnnotation.swift in Sources */,
 				8DE73F4B2AE681F2009F49CE /* LoginViewModel.swift in Sources */,
 				8DE73F692AEA793A009F49CE /* Character.swift in Sources */,
+				8DB80A022AEC497300FB55C4 /* TabBarViewController.swift in Sources */,
+				8DB80A062AEC5E3100FB55C4 /* TabBarViewModel.swift in Sources */,
+				8DB809FD2AEC2F3600FB55C4 /* LocationsViewController.swift in Sources */,
 				8DE73F4D2AE6D9C4009F49CE /* Constants.swift in Sources */,
 				8DE73F702AEAF052009F49CE /* CharacterDetailViewController.swift in Sources */,
 				8DB809F12AEBBA1B00FB55C4 /* CharacterLocationDAO.swift in Sources */,
 				8DE73F722AEAF070009F49CE /* CharacterDetailViewModel.swift in Sources */,
 				8DE73F5C2AE6E337009F49CE /* CharactersViewController.swift in Sources */,
 				8DE73F6B2AEA7ACA009F49CE /* CoreDataProvider.swift in Sources */,
+				8DB80A082AED159700FB55C4 /* LocationsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,6 +37,10 @@ enum  SegueIdentifiersValues {
     static let SPLASHtoCHARACTERS = "SPLASH_TO_CHARACTERS"
     static let CHARACTERStoDETAIL = "CHARACTERS_TO_DETAIL"
     static let DETAILtoLOGIN = "DETAIL_TO_LOGIN"
+    static let TABBARtoCHARACTERS = "TAB_TO_CHARACTERS"
+    static let TABBARtoLOCATIONS = "TAB_TO_LOCATIONS"
+    static let SPLASHtoTABS = "SPLASH_TO_TABS"
+    static let LOGINtoTABS = "LOGIN_TO_TABS"
 }
 
 //MARK: -NETWORK ERRORS -

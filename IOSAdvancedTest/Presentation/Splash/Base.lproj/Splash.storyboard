@@ -39,6 +39,7 @@
                     <connections>
                         <segue destination="XZS-tX-E5i" kind="show" identifier="SPLASH_TO_LOGIN" id="vaF-ZU-U9O"/>
                         <segue destination="zCk-LR-9Si" kind="show" identifier="SPLASH_TO_CHARACTERS" id="YCm-Ye-aKi"/>
+                        <segue destination="P5u-ai-bxT" kind="show" identifier="SPLASH_TO_TABS" id="Ciy-nQ-RGF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -64,6 +65,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6kK-w4-gmA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="899" y="62"/>
+        </scene>
+        <!--TabBarViewController-->
+        <scene sceneID="qQa-0b-WAb">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="TabBarViewController" storyboardName="TabBar" referencedIdentifier="TabBarViewController" id="P5u-ai-bxT" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="NEI-QX-aN8"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQD-ip-YMg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="201"/>
         </scene>
     </scenes>
     <resources>

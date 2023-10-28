@@ -14,6 +14,9 @@ class SplashViewModel: SplashViewControllerDelegate {
     lazy var charactersViewModel: CharactersViewControllerDelegate = {
         CharactersViewModel(apiProvider: apiProvider, dataProvider: secureDataProvider, logged: false)
     }()
+    lazy var tabBarViewModel: TabBarViewControllerDelegate = {
+        TabBarViewModel(apiProvider: apiProvider, secureDataProvider: secureDataProvider ,charactersViewModel: charactersViewModel, locationsViewModel: LocationsViewModel(apiProvider: apiProvider, secureDataProvider: secureDataProvider ) )
+    }()
     private let apiProvider: ApiProviderProtocol
     private let secureDataProvider: SecureDataProviderProtocol
     var viewState: ((SplashViewState) -> Void)?

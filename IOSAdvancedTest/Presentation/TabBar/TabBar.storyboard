@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="sba-rS-P6h">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarViewController" id="xwa-qW-3ug" customClass="TabBarViewController" customModule="IOSAdvancedTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="WM0-9o-gDq">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.98113089799999997" green="0.47420442099999999" blue="0.01407735888" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <tabBarAppearance key="standardAppearance">
+                            <color key="backgroundColor" red="0.98113089799999997" green="0.47420442099999999" blue="0.01407735888" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </tabBarAppearance>
+                    </tabBar>
+                    <connections>
+                        <outlet property="TabBar" destination="WM0-9o-gDq" id="BYq-lX-eyI"/>
+                        <outlet property="tabBar" destination="WM0-9o-gDq" id="nXC-b7-PJM"/>
+                        <segue destination="fHX-yU-iHx" kind="relationship" relationship="viewControllers" id="H7N-qE-sgE"/>
+                        <segue destination="UAk-Zg-JYN" kind="relationship" relationship="viewControllers" id="OsP-ex-cMe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5q-Iy-I1h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="384" y="-230"/>
+        </scene>
+        <!--CharactersViewController-->
+        <scene sceneID="ta6-1N-UwV">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Characters" referencedIdentifier="CharactersViewController" id="fHX-yU-iHx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" selectedImage="pinImage" id="e3f-c6-aCr"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hD3-Xa-K9u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1309" y="-294"/>
+        </scene>
+        <!--LocationsViewController-->
+        <scene sceneID="2Qb-1O-nob">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Locations" referencedIdentifier="LocationsViewController" id="UAk-Zg-JYN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="ASX-d4-JAR"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iKD-71-XUA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1300" y="-150"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pinImage" width="400" height="400"/>
+    </resources>
+</document>

@@ -40,7 +40,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Characters" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1d3-Ha-0Zl">
-                                        <rect key="frame" x="28" y="8" width="337" height="32"/>
+                                        <rect key="frame" x="28" y="16" width="337" height="24"/>
                                         <fontDescription key="fontDescription" name="SaiyanSans" family="Saiyan Sans" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -48,10 +48,12 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="1d3-Ha-0Zl" firstAttribute="top" secondItem="Ga4-YO-FcZ" secondAttribute="top" constant="16" id="3oe-50-R3B"/>
                                     <constraint firstAttribute="trailing" secondItem="jxc-Ve-icf" secondAttribute="trailing" constant="16" id="Dpm-wa-B6Z"/>
                                     <constraint firstItem="jxc-Ve-icf" firstAttribute="centerY" secondItem="Ga4-YO-FcZ" secondAttribute="centerY" id="G7F-NN-KE9"/>
                                     <constraint firstAttribute="bottom" secondItem="1d3-Ha-0Zl" secondAttribute="bottom" id="NTf-Bp-3gx"/>
                                     <constraint firstItem="1d3-Ha-0Zl" firstAttribute="top" secondItem="Ga4-YO-FcZ" secondAttribute="top" constant="8" id="RqQ-zj-fEY"/>
+                                    <constraint firstItem="1d3-Ha-0Zl" firstAttribute="top" secondItem="Ga4-YO-FcZ" secondAttribute="top" constant="16" id="fh2-N9-HaJ"/>
                                     <constraint firstItem="jxc-Ve-icf" firstAttribute="leading" secondItem="1d3-Ha-0Zl" secondAttribute="trailing" constant="-28" id="mE6-Wv-tDJ"/>
                                     <constraint firstItem="1d3-Ha-0Zl" firstAttribute="leading" secondItem="Ga4-YO-FcZ" secondAttribute="leading" constant="28" id="t0P-pf-R4G"/>
                                 </constraints>

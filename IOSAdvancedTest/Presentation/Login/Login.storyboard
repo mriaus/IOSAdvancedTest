@@ -144,6 +144,7 @@
                         <outlet property="passwordErrorLabel" destination="vtr-Ik-6Dh" id="mta-K1-NWs"/>
                         <outlet property="passwordInput" destination="huP-Di-uvT" id="yMz-JV-xav"/>
                         <segue destination="JA6-6n-Ajv" kind="show" identifier="LOGIN_TO_CHARACTERS" id="K4C-SD-jIK"/>
+                        <segue destination="p8t-L2-9IR" kind="show" identifier="LOGIN_TO_TABS" id="fKJ-pI-06w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -159,6 +160,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3F0-no-Cbn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="739" y="-27"/>
+        </scene>
+        <!--TabBarViewController-->
+        <scene sceneID="3fa-Np-4Cd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="TabBar" referencedIdentifier="TabBarViewController" id="p8t-L2-9IR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="6Y1-Qs-Q95"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEV-e0-ygx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="854" y="69"/>
         </scene>
     </scenes>
     <resources>

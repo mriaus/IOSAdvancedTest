@@ -45,11 +45,8 @@ class CharacterDetailViewController: UIViewController {
         detailMapView.delegate = self
         logOutButton.setImage(UIImage(systemName: "power"), for: .normal)
         logOutButton.tintColor = UIColor.red
-        
         goBackButton.setImage(UIImage(systemName: "chevron.left"), for: .normal)
-        
         goBackButton.tintColor = UIColor.orange
-        
     }
     
     private func setObservers(){
@@ -140,7 +137,4 @@ extension CharacterDetailViewController: MKMapViewDelegate{
             return nil
         }
     }
-    
-    
-    
 }

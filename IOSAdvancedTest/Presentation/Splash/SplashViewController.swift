@@ -10,6 +10,7 @@ import UIKit
 protocol SplashViewControllerDelegate {
     var loginViewModel: LoginViewControllerDelegate {get}
     var charactersViewModel: CharactersViewControllerDelegate {get}
+    var tabBarViewModel: TabBarViewControllerDelegate {get}
     func getToken()
     var viewState: ((SplashViewState) -> Void)? {get set}
 }
@@ -46,12 +47,21 @@ class SplashViewController: UIViewController {
                 return
             }
             loginViewController.viewModel = viewModel?.loginViewModel
+            
         case SegueIdentifiersValues.SPLASHtoCHARACTERS:
             guard let charactersViewController = segue.destination as? CharactersViewController else {
                 print("Error in splash_to_characters vm")
                 return
             }
             charactersViewController.viewModel = viewModel?.charactersViewModel
+        case SegueIdentifiersValues.SPLASHtoTABS:
+            guard let tabBarViewController = segue.destination as? TabBarViewController else {
+                print("Error in splash_to_characters vm")
+                return
+            }
+            
+            tabBarViewController.viewModel = viewModel?.tabBarViewModel
+            print("Hace el prepare for segue")
         default: return
         }
     }
@@ -64,7 +74,7 @@ class SplashViewController: UIViewController {
                     self?.performSegue(withIdentifier: SegueIdentifiersValues.SPLASHtoLOGIN, sender: nil)
                     return
                 case .navigateToList:
-                    self?.performSegue(withIdentifier: SegueIdentifiersValues.SPLASHtoCHARACTERS, sender: nil)
+                    self?.performSegue(withIdentifier: SegueIdentifiersValues.SPLASHtoTABS, sender: nil)
                 }
             }
         }
