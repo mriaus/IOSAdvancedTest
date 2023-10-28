@@ -14,7 +14,6 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     var charactersCount: Int {
         characters.count
     }
-    private var logged: Bool
     private let apiProvider: ApiProviderProtocol
     private let secureDataProvider: SecureDataProviderProtocol
     var loginViewModel: LoginViewControllerDelegate {
@@ -22,10 +21,9 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     }
     
     
-    init(apiProvider: ApiProviderProtocol, dataProvider: SecureDataProviderProtocol, logged: Bool?) {
+    init(apiProvider: ApiProviderProtocol, dataProvider: SecureDataProviderProtocol) {
         self.apiProvider = apiProvider
         self.secureDataProvider = dataProvider
-        self.logged = logged ?? false
     }
     
     func characterDetailViewModel(index: Int) ->  CharacterDetailDelegate?{

@@ -54,6 +54,7 @@ class CharacterDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 switch state {
                 case .loading(let isLoading):
+                    //TODO: Add the loading screen
                     break
                 case .update(let character, let characterLocation):
                     self?.updateView(character: character, characterLocation: characterLocation)

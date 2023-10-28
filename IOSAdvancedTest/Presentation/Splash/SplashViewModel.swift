@@ -12,7 +12,7 @@ class SplashViewModel: SplashViewControllerDelegate {
         LoginViewModel(apiProvider: apiProvider, secureDataProvider: secureDataProvider)
     }()
     lazy var charactersViewModel: CharactersViewControllerDelegate = {
-        CharactersViewModel(apiProvider: apiProvider, dataProvider: secureDataProvider, logged: false)
+        CharactersViewModel(apiProvider: apiProvider, dataProvider: secureDataProvider)
     }()
     lazy var tabBarViewModel: TabBarViewControllerDelegate = {
         TabBarViewModel(apiProvider: apiProvider, secureDataProvider: secureDataProvider ,charactersViewModel: charactersViewModel, locationsViewModel: LocationsViewModel(apiProvider: apiProvider, secureDataProvider: secureDataProvider ) )

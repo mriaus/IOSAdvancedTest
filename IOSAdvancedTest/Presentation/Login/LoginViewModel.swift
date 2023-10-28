@@ -13,7 +13,7 @@ class LoginViewModel: LoginViewControllerDelegate {
     private let apiProvider: ApiProviderProtocol
     private let secureDataProvider: SecureDataProviderProtocol
     var tabBarViewModel: TabBarViewControllerDelegate {
-        TabBarViewModel(apiProvider: apiProvider, secureDataProvider: secureDataProvider,charactersViewModel: CharactersViewModel(apiProvider: apiProvider, dataProvider: secureDataProvider, logged: true), locationsViewModel: LocationsViewModel(apiProvider: apiProvider, secureDataProvider: secureDataProvider) )
+        TabBarViewModel(apiProvider: apiProvider, secureDataProvider: secureDataProvider,charactersViewModel: CharactersViewModel(apiProvider: apiProvider, dataProvider: secureDataProvider), locationsViewModel: LocationsViewModel(apiProvider: apiProvider, secureDataProvider: secureDataProvider) )
     }
     
     //    MARK: - Init -
