@@ -37,7 +37,6 @@ class SplashViewController: UIViewController {
         lottieView.animationSpeed = 1
         if(!lottieView.isAnimationPlaying){
             lottieView.play()
-
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){ [weak self] in
             self?.viewModel?.getToken()

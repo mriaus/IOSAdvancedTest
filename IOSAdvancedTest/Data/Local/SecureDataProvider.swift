@@ -21,7 +21,7 @@ class SecureDataProvider: SecureDataProviderProtocol {
     }
     
     func getToken() -> String? {
-        keychain.get(KeychainValues.TOKEN)
+        return keychain.get(KeychainValues.TOKEN)
     }
     
 }

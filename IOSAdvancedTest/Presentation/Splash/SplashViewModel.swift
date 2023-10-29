@@ -29,7 +29,7 @@ class SplashViewModel: SplashViewControllerDelegate {
     
     func getToken() {
         guard let token = secureDataProvider.getToken() else {
-            print("Unexpected error token")
+            self.viewState?(.navigateToLogin)
             return
         }
         if(token.isEmpty) {
