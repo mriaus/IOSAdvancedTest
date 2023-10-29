@@ -32,10 +32,11 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     }
     
     func onViewAppear() {
+        viewState?(.loading(true))
+        defer {viewState?(.loading(false))}
         NotificationCenter.default.removeObserver(self)
         let coreDataProvider = CoreDataProvider(context: AppDelegate().persistentContainer.viewContext)
         self.characters = coreDataProvider.loadCharacters()
-        print(self.characters.count)
         if(self.characters.count < 1){
             //                Just call the api if no characters found
             print("Api data")
@@ -45,7 +46,9 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     }
     
     private func  getApiData(){
+        viewState?(.loading(true))
         DispatchQueue.global().async { [weak self] in
+            defer {self?.viewState?(.loading(false))}
             guard let token = self?.secureDataProvider.getToken() else {return}
             self?.apiProvider.getCharacters(by: nil, token: token) { characters in
                 self?.characters = characters

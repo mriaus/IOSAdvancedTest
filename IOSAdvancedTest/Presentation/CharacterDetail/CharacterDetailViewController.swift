@@ -17,7 +17,6 @@ protocol CharacterDetailDelegate {
     var loginViewModel: LoginViewControllerDelegate {get}
 }
 enum CharacterDetailViewState {
-    case loading(_ isLoading: Bool)
     case update(character: Character?, locations: CharacterLocations?)
     case navigateToLogin
     case goBack
@@ -53,9 +52,6 @@ class CharacterDetailViewController: UIViewController {
         viewModel?.viewState = { [weak self] state in
             DispatchQueue.main.async {
                 switch state {
-                case .loading(let isLoading):
-                    //TODO: Add the loading screen
-                    break
                 case .update(let character, let characterLocation):
                     self?.updateView(character: character, characterLocation: characterLocation)
                 case .navigateToLogin:

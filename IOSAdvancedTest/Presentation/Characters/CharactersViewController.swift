@@ -20,12 +20,15 @@ protocol CharactersViewControllerDelegate {
 }
 
 enum CharacterViewState {
+    case loading(_ isLoading: Bool)
     case updateData
     case navigateToLogin
 }
 
 class CharactersViewController: UIViewController {
     
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var logOutButton: UIButton!
     var viewModel: CharactersViewControllerDelegate?
@@ -41,11 +44,16 @@ class CharactersViewController: UIViewController {
         viewModel?.onViewAppear()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        loadingIndicator.stopAnimating()
+    }
+    
     private func initViews() {
         tableView.delegate = self
         tableView.dataSource = self
         logOutButton.setImage(UIImage(systemName: "power"), for: .normal)
         logOutButton.tintColor = UIColor.red
+        loadingIndicator.startAnimating()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -75,6 +83,9 @@ class CharactersViewController: UIViewController {
         viewModel?.viewState = { [weak self] state in
             DispatchQueue.main.async {
                 switch state {
+                case .loading(let isLoading):
+                    self?.loadingView.isHidden = !isLoading
+                    break
                 case .updateData:
                     self?.tableView.reloadData()
                 case .navigateToLogin:

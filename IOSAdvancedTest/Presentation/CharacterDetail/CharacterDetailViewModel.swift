@@ -24,10 +24,7 @@ class CharacterDetailViewModel: CharacterDetailDelegate {
     }
     
     func onViewAppear(){
-        viewState?(.loading(true))
-        
         DispatchQueue.global().async{ [weak self] in
-            defer { self?.viewState?((.loading(false))) }
             guard let token = self?.secureDataProvider.getToken() else {
                 return
             }

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 protocol LoginViewControllerDelegate {
     var viewState: ((LoginViewState) ->Void)? {get set}
@@ -25,6 +26,8 @@ enum LoginViewState {
 class LoginViewController: UIViewController {
     var viewModel: LoginViewControllerDelegate?
     
+
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     @IBOutlet weak var loadingView: UIView!
     @IBOutlet weak var mailInput: UITextField!
     
@@ -43,10 +46,15 @@ class LoginViewController: UIViewController {
         setObservers()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        loadingIndicator.stopAnimating()
+    }
+    
     private func initiView() {
         mailInput.delegate = self
         passwordInput.delegate = self
-        
+        loadingIndicator.startAnimating()
         view.addGestureRecognizer(
             UITapGestureRecognizer(
             target: self,

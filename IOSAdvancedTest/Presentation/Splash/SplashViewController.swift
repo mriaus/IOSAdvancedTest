@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Lottie
 
 protocol SplashViewControllerDelegate {
     var loginViewModel: LoginViewControllerDelegate {get}
@@ -21,6 +22,7 @@ enum SplashViewState {
 }
 
 class SplashViewController: UIViewController {
+    @IBOutlet weak var lottieView: LottieAnimationView!
     var viewModel: SplashViewControllerDelegate?
 
     override func viewDidLoad() {
@@ -31,12 +33,25 @@ class SplashViewController: UIViewController {
     }
     
     private func initiViews() {
-        viewModel?.getToken()
+        lottieView.loopMode = .loop
+        lottieView.animationSpeed = 1
+        if(!lottieView.isAnimationPlaying){
+            lottieView.play()
+
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)){ [weak self] in
+            self?.viewModel?.getToken()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        lottieView.stop()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -61,7 +76,6 @@ class SplashViewController: UIViewController {
             }
             
             tabBarViewController.viewModel = viewModel?.tabBarViewModel
-            print("Hace el prepare for segue")
         default: return
         }
     }

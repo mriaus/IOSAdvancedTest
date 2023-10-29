@@ -7,11 +7,6 @@
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Saiyan-Sans.ttf">
-            <string>SaiyanSans</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Splash View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -21,22 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splash screen launch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wiV-mu-wLF">
-                                <rect key="frame" x="0.0" y="370" width="393" height="17"/>
-                                <fontDescription key="fontDescription" name="SaiyanSans" family="Saiyan Sans" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="Shp-JV-Dmp" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="96.666666666666686" y="326" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="LeM-nu-Mg8"/>
+                                    <constraint firstAttribute="height" constant="200" id="ldU-dT-KXj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="loadingAnimation"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wiV-mu-wLF" secondAttribute="trailing" id="1xW-NS-dpq"/>
-                            <constraint firstItem="wiV-mu-wLF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="311" id="3a4-Ba-38w"/>
-                            <constraint firstItem="wiV-mu-wLF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CEl-wm-2gU"/>
+                            <constraint firstItem="Shp-JV-Dmp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="N0h-cw-W82"/>
+                            <constraint firstItem="Shp-JV-Dmp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="267" id="YN3-wG-TzL"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="lottieView" destination="Shp-JV-Dmp" id="gaB-yQ-L4k"/>
                         <segue destination="XZS-tX-E5i" kind="show" identifier="SPLASH_TO_LOGIN" id="vaF-ZU-U9O"/>
                         <segue destination="zCk-LR-9Si" kind="show" identifier="SPLASH_TO_CHARACTERS" id="YCm-Ye-aKi"/>
                         <segue destination="P5u-ai-bxT" kind="show" identifier="SPLASH_TO_TABS" id="Ciy-nQ-RGF"/>

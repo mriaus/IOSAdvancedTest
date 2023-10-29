@@ -21,6 +21,8 @@
 		8DB80A102AED742C00FB55C4 /* MockApiProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB80A0F2AED742C00FB55C4 /* MockApiProvider.swift */; };
 		8DB80A122AED80F900FB55C4 /* ApiProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB80A112AED80F900FB55C4 /* ApiProviderTests.swift */; };
 		8DB80A142AED8A6100FB55C4 /* SecureDataProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB80A132AED8A6100FB55C4 /* SecureDataProviderTest.swift */; };
+		8DB80A212AEE7C2800FB55C4 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8DB80A202AEE7C2800FB55C4 /* Lottie */; };
+		8DB80A242AEE7C4000FB55C4 /* loadingAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DB80A232AEE7C4000FB55C4 /* loadingAnimation.json */; };
 		8DE73EF62AE6708C009F49CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73EF52AE6708C009F49CE /* AppDelegate.swift */; };
 		8DE73EF82AE6708C009F49CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73EF72AE6708C009F49CE /* SceneDelegate.swift */; };
 		8DE73EFA2AE6708C009F49CE /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE73EF92AE6708C009F49CE /* SplashViewController.swift */; };
@@ -85,6 +87,7 @@
 		8DB80A0F2AED742C00FB55C4 /* MockApiProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiProvider.swift; sourceTree = "<group>"; };
 		8DB80A112AED80F900FB55C4 /* ApiProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderTests.swift; sourceTree = "<group>"; };
 		8DB80A132AED8A6100FB55C4 /* SecureDataProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataProviderTest.swift; sourceTree = "<group>"; };
+		8DB80A232AEE7C4000FB55C4 /* loadingAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingAnimation.json; sourceTree = "<group>"; };
 		8DE73EF22AE6708C009F49CE /* IOSAdvancedTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSAdvancedTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE73EF52AE6708C009F49CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DE73EF72AE6708C009F49CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +129,7 @@
 			files = (
 				8DE73F552AE6E1A0009F49CE /* Kingfisher in Frameworks */,
 				8DE73F522AE6E17B009F49CE /* KeychainSwift in Frameworks */,
+				8DB80A212AEE7C2800FB55C4 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +193,14 @@
 				8DB80A0F2AED742C00FB55C4 /* MockApiProvider.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		8DB80A222AEE7C3000FB55C4 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				8DB80A232AEE7C4000FB55C4 /* loadingAnimation.json */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		8DE73EE92AE6708C009F49CE = {
@@ -272,6 +284,7 @@
 		8DE73F2A2AE67209009F49CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8DB80A222AEE7C3000FB55C4 /* Animations */,
 				8DE73F4C2AE6D9C4009F49CE /* Constants.swift */,
 				8DE73F422AE68107009F49CE /* Fonts */,
 				8DE73F012AE6708E009F49CE /* Assets.xcassets */,
@@ -409,6 +422,7 @@
 			packageProductDependencies = (
 				8DE73F512AE6E17B009F49CE /* KeychainSwift */,
 				8DE73F542AE6E1A0009F49CE /* Kingfisher */,
+				8DB80A202AEE7C2800FB55C4 /* Lottie */,
 			);
 			productName = IOSAdvancedTest;
 			productReference = 8DE73EF22AE6708C009F49CE /* IOSAdvancedTest.app */;
@@ -485,6 +499,7 @@
 			packageReferences = (
 				8DE73F502AE6E17B009F49CE /* XCRemoteSwiftPackageReference "keychain-swift" */,
 				8DE73F532AE6E1A0009F49CE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				8DB80A1F2AEE7C2800FB55C4 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 8DE73EF32AE6708C009F49CE /* Products */;
 			projectDirPath = "";
@@ -510,6 +525,7 @@
 				8DE73F472AE681DB009F49CE /* Login.storyboard in Resources */,
 				8DE73F5A2AE6E2E4009F49CE /* Characters.storyboard in Resources */,
 				8DE73EFD2AE6708C009F49CE /* Splash.storyboard in Resources */,
+				8DB80A242AEE7C4000FB55C4 /* loadingAnimation.json in Resources */,
 				8DB809FB2AEC2F2700FB55C4 /* Locations.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -911,6 +927,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		8DB80A1F2AEE7C2800FB55C4 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.3.3;
+			};
+		};
 		8DE73F502AE6E17B009F49CE /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
@@ -930,6 +954,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8DB80A202AEE7C2800FB55C4 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DB80A1F2AEE7C2800FB55C4 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		8DE73F512AE6E17B009F49CE /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8DE73F502AE6E17B009F49CE /* XCRemoteSwiftPackageReference "keychain-swift" */;

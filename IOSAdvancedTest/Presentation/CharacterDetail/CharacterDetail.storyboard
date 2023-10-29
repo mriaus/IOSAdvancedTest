@@ -30,11 +30,23 @@
                                 <rect key="frame" x="296" y="321" width="97" height="89"/>
                             </imageView>
                             <view contentMode="scaleToFill" id="32H-rq-8fh">
-                                <rect key="frame" x="0.0" y="62" width="393" height="40"/>
+                                <rect key="frame" x="0.0" y="62" width="393" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlT-40-P9m">
+                                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="7jO-JG-KBm"/>
+                                            <constraint firstAttribute="width" constant="40" id="Rzs-Ub-28y"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain"/>
+                                        <connections>
+                                            <action selector="onBackPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JtS-Wv-zon"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zY-9n-QaT">
-                                        <rect key="frame" x="337" y="0.0" width="40" height="40"/>
+                                        <rect key="frame" x="337" y="8" width="40" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="40" id="G04-yD-joq"/>
                                             <constraint firstAttribute="height" constant="40" id="LIY-7B-ePM"/>
@@ -48,33 +60,24 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZs-Io-Xof">
-                                        <rect key="frame" x="56" y="8" width="273" height="32"/>
+                                        <rect key="frame" x="56" y="8" width="273" height="0.0"/>
                                         <fontDescription key="fontDescription" name="SaiyanSans" family="Saiyan Sans" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlT-40-P9m">
-                                        <rect key="frame" x="8" y="0.0" width="40" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="7jO-JG-KBm"/>
-                                            <constraint firstAttribute="width" constant="40" id="Rzs-Ub-28y"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain"/>
-                                        <connections>
-                                            <action selector="onBackPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JtS-Wv-zon"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="hlT-40-P9m" secondAttribute="bottom" id="9G6-26-xUG"/>
                                     <constraint firstItem="JZs-Io-Xof" firstAttribute="leading" secondItem="32H-rq-8fh" secondAttribute="leading" constant="56" id="Hpm-hA-2sI"/>
                                     <constraint firstItem="2zY-9n-QaT" firstAttribute="leading" secondItem="JZs-Io-Xof" secondAttribute="trailing" constant="8" id="J3c-ie-18s"/>
+                                    <constraint firstItem="hlT-40-P9m" firstAttribute="centerY" secondItem="32H-rq-8fh" secondAttribute="centerY" id="QJ9-uf-OR8"/>
                                     <constraint firstAttribute="trailing" secondItem="2zY-9n-QaT" secondAttribute="trailing" constant="16" id="ZZd-NG-ATn"/>
                                     <constraint firstAttribute="bottom" secondItem="JZs-Io-Xof" secondAttribute="bottom" id="Znz-t7-hor"/>
+                                    <constraint firstItem="2zY-9n-QaT" firstAttribute="top" secondItem="32H-rq-8fh" secondAttribute="top" constant="8" id="gFb-gy-Od3"/>
                                     <constraint firstItem="JZs-Io-Xof" firstAttribute="top" secondItem="32H-rq-8fh" secondAttribute="top" constant="8" id="kCh-uj-GjN"/>
-                                    <constraint firstItem="hlT-40-P9m" firstAttribute="leading" secondItem="32H-rq-8fh" secondAttribute="leadingMargin" id="u4p-Cj-2qT"/>
+                                    <constraint firstItem="hlT-40-P9m" firstAttribute="top" secondItem="32H-rq-8fh" secondAttribute="top" constant="8" id="moV-2b-6Kz"/>
+                                    <constraint firstItem="JZs-Io-Xof" firstAttribute="leading" secondItem="hlT-40-P9m" secondAttribute="trailing" constant="8" symbolic="YES" id="ulH-b1-q6b"/>
                                     <constraint firstItem="2zY-9n-QaT" firstAttribute="centerY" secondItem="32H-rq-8fh" secondAttribute="centerY" id="vnF-RW-p6Z"/>
                                 </constraints>
                             </view>

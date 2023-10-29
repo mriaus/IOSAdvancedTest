@@ -96,9 +96,15 @@
                                             <action selector="onLoginPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qwc-Pv-lrX"/>
                                         </connections>
                                     </button>
-                                    <view hidden="YES" alpha="0.55000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ub2-HG-W7m">
+                                    <view hidden="YES" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ub2-HG-W7m">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-S6-BWa">
+                                                <rect key="frame" x="186" y="416" width="20" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -136,6 +142,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="4Wc-S6-BWa" id="1yW-5e-jxE"/>
                         <outlet property="loadingView" destination="ub2-HG-W7m" id="DKD-sd-5en"/>
                         <outlet property="loginButton" destination="XMD-UC-S1N" id="eq2-dd-9We"/>
                         <outlet property="loginErrorLabel" destination="5NT-C0-SKT" id="pkm-pB-ie6"/>
