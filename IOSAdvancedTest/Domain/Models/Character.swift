@@ -7,9 +7,9 @@
 
 import Foundation
 
-typealias Characters = [Character]
+public typealias Characters = [Character]
 
-struct Character: Codable {
+public struct Character: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case name

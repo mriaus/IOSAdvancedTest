@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 @objc(CharacterDAO)
-class CharacterDAO: NSManagedObject {
+public class CharacterDAO: NSManagedObject {
     // Mover a un fichero de constantes
     static let entityName = "CharacterDAO"
     

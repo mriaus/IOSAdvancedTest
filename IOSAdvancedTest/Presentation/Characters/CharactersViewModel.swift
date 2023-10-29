@@ -47,7 +47,7 @@ class CharactersViewModel: CharactersViewControllerDelegate {
     private func  getApiData(){
         DispatchQueue.global().async { [weak self] in
             guard let token = self?.secureDataProvider.getToken() else {return}
-            self?.apiProvider.getHeroes(by: nil, token: token) { characters in
+            self?.apiProvider.getCharacters(by: nil, token: token) { characters in
                 self?.characters = characters
                 self?.viewState?(.updateData)
                 DispatchQueue.main.async {

@@ -8,20 +8,20 @@
 import Foundation
 
 //MARK: -KEYCHAIN VALUES-
-enum KeychainValues {
+public enum KeychainValues {
     static let TOKEN = "KEYCHAIN_TOKEN"
 }
 //MARK: - API URL -
-let APIBASEURL = "https://dragonball.keepcoding.education/api"
+public let APIBASEURL = "https://dragonball.keepcoding.education/api"
 
 // MARK: - ENDPOINTS -
-enum ENDPOINTS {
+public enum ENDPOINTS {
     static let LOGIN = "/auth/login"
-    static let HEROES = "/heros/all"
+    static let CHARACTERS = "/heros/all"
     static let LOCATION = "/heros/locations"
 }
 // MARK: -Notification center names-
-extension NotificationCenter {
+public extension NotificationCenter {
     static let APILOGINNOTIFICATION = Notification.Name("NOTIFICATION_API_LOGIN")
     static let APILOGINFAILEDNOTIFICATION = Notification.Name("NOTIFICATION_API_LOGIN_FAILED")
     static let TOKENKEY = Notification.Name("TOKEN_KEY")
@@ -30,7 +30,7 @@ extension NotificationCenter {
 }
 
 //MARK: - SEGUES NAMES -
-enum  SegueIdentifiersValues {
+public enum  SegueIdentifiersValues {
     static let LOGINtoCHARACTERS = "LOGIN_TO_CHARACTERS"
     static let SPLASHtoLOGIN = "SPLASH_TO_LOGIN"
     static let CHARACTERStoLOGIN = "CHARACTERS_TO_LOGIN"
@@ -44,7 +44,7 @@ enum  SegueIdentifiersValues {
 }
 
 //MARK: -NETWORK ERRORS -
-enum NetworkError: Error {
+public enum NetworkError: Error {
     case unknown
     case malformedUrl
     case decodingFailed

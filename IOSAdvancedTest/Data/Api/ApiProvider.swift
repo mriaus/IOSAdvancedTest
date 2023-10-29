@@ -6,9 +6,9 @@
 //
 
 import Foundation
-protocol ApiProviderProtocol {
+public protocol ApiProviderProtocol {
     func login(for user: String, with password: String)
-    func getHeroes(by name: String?, token: String, completion: ((Characters) -> Void)?)
+    func getCharacters(by name: String?, token: String, completion: ((Characters) -> Void)?)
     func getLocations(by characterId: String?, token: String, completion: ((CharacterLocations) -> Void)?)
 }
 
@@ -51,9 +51,9 @@ class ApiProvider: ApiProviderProtocol {
             
         }.resume()
     }
-    //    MARK: GET HEROES
-    func getHeroes(by name: String?, token: String, completion: ((Characters) -> Void)?) {
-        guard let url = URL(string: "\(apiBaseUrl)\(endpoints.HEROES)") else {
+    //    MARK: GET CHARACTERS
+    func getCharacters(by name: String?, token: String, completion: ((Characters) -> Void)?) {
+        guard let url = URL(string: "\(apiBaseUrl)\(endpoints.CHARACTERS)") else {
             completion?([])
             return
         }
@@ -87,7 +87,6 @@ class ApiProvider: ApiProviderProtocol {
 //    MARK: GET LOCATIONS
     func getLocations(by characterId: String?, token: String, completion: ((CharacterLocations) -> Void)?) {
         guard let url = URL(string: "\(apiBaseUrl)\(endpoints.LOCATION)") else {
-            // TODO: MAndar notificacion con error
             completion?([])
             return
         }
